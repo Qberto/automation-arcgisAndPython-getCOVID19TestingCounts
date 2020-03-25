@@ -1,11 +1,9 @@
-import pandas as pd         # Pandas is how we handle data in Python
-import numpy as np          # Access to python's scientific computing library
-import scipy                # Modules for mathematics, science, and engineering
+import pandas as pd         # Data Handling
 import os                   # Access to operating system commands
 import requests             # Access to HTTPS commands to retrieve data
-import getpass              # Access to secure handling of sensitive values (i.e. passwords, API keys)
 from datetime import date, timedelta # Access to current date and time operations
 import time                 # Time helper functions
+from pathlib import Path    # Path library
 import arcgis               # Access to spatially-enabled dataframe
 import arcpy                # Access to ArcGIS Pro geoprocessing tools 
 
@@ -32,6 +30,7 @@ class GetCOVID19TestingData_mostRecent(object):
             parameterType="Required",
             direction="Output")
         out_featureclass.value = os.path.join(arcpy.mp.ArcGISProject("CURRENT").defaultGeodatabase, "covid19_testing_"+date.today().strftime("%Y%m%d"))
+        # out_featureclass.symbology = os.path.join(os.path.dirname(__file__), 'covid19_testing.lyrx')
 
         in_calculate_testing_rate = arcpy.Parameter(
             displayName="Calculate Tests Per Million People",
@@ -140,14 +139,14 @@ class GetCOVID19TestingData_mostRecent(object):
         # Add state grade layer if necessary
         if in_add_state_grade_layer:
             out_grade_layer = pro_map.addDataFromPath(out_fc)
-            symb_layer = r"covid19_testing_grade.lyrx"
+            symb_layer = os.path.join(Path(Path(pro_project.filePath).parent).parent, r"commondata\userdata\covid19_testing_grade.lyrx")
             arcpy.management.ApplySymbologyFromLayer(out_grade_layer, 
                                                      symb_layer, 
                                                      "VALUE_FIELD score score", "MAINTAIN")
 
             # Workaround to apply symbology layer to output layer
-            arcpy.SaveToLayerFile_management(out_grade_layer, r"templayer_grade.lyr", "RELATIVE")
-            grade_lyr_file = arcpy.mp.LayerFile(r"templayer_grade.lyrx")
+            grade_lyr_path = arcpy.SaveToLayerFile_management(out_grade_layer, r"templayer_grade.lyr", "RELATIVE").getOutput(0)
+            grade_lyr_file = arcpy.mp.LayerFile(grade_lyr_path)
             grade_lyr = grade_lyr_file.listLayers()[0]
             old_lyr_name = out_grade_layer.name
             grade_lyr.updateConnectionProperties(grade_lyr.connectionProperties, out_grade_layer.connectionProperties)
@@ -160,14 +159,14 @@ class GetCOVID19TestingData_mostRecent(object):
 
         # Add Test Rates Layer
         out_layer = pro_map.addDataFromPath(out_fc)
-        symb_layer = r"covid19_testing.lyrx"
+        symb_layer = os.path.join(Path(Path(pro_project.filePath).parent).parent, r"commondata\userdata\covid19_testing.lyrx")
         arcpy.management.ApplySymbologyFromLayer(out_layer, 
                                                  symb_layer, 
                                                  "VALUE_FIELD tests_per_1M_residents tests_per_1M_residents", "MAINTAIN")
 
         # Workaround to apply symbology layer to output layer
-        arcpy.SaveToLayerFile_management(out_layer, r"templayer.lyr", "RELATIVE")
-        new_lyr_file = arcpy.mp.LayerFile(r"templayer.lyrx")
+        lyr_path = arcpy.SaveToLayerFile_management(out_layer, r"templayer.lyr", "RELATIVE").getOutput(0)
+        new_lyr_file = arcpy.mp.LayerFile(lyr_path)
         new_lyr = new_lyr_file.listLayers()[0]
         old_lyr_name = out_layer.name
         new_lyr.updateConnectionProperties(new_lyr.connectionProperties, out_layer.connectionProperties)
@@ -178,7 +177,6 @@ class GetCOVID19TestingData_mostRecent(object):
         pro_map.insertLayer(out_layer, new_lyr_file)
         pro_map.removeLayer(out_layer)
         
-
         arcpy.AddMessage("Data download completed.")
         return
 

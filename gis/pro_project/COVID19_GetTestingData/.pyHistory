@@ -1,0 +1,6 @@
+﻿arcpy.env.workspace
+import requests
+requests.get(r"https://github.com/Qberto/automation-arcgisAndPython-getCOVID19TestingCounts/raw/master/gis/pro_project/COVID19_GetTestingData/Covid19%20Testing%20Data%20GP%20Tools/covid19_testing.lyrx")
+os.path.dirname(__file__)
+import os
+os.path.dirname(__file__)
