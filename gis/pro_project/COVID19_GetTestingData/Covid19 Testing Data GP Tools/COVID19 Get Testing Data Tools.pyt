@@ -30,15 +30,6 @@ class GetCOVID19TestingData_mostRecent(object):
             parameterType="Required",
             direction="Output")
         out_featureclass.value = os.path.join(arcpy.mp.ArcGISProject("CURRENT").defaultGeodatabase, "covid19_testing_"+date.today().strftime("%Y%m%d"))
-        # out_featureclass.symbology = os.path.join(os.path.dirname(__file__), 'covid19_testing.lyrx')
-
-        in_calculate_testing_rate = arcpy.Parameter(
-            displayName="Calculate Tests Per Million People",
-            name="in_calc_testing_rate",
-            datatype="GPBoolean",
-            parameterType="Required",
-            direction="Input")
-        in_calculate_testing_rate.value = True
 
         in_enrich_with_age_breakouts = arcpy.Parameter(
             displayName="Enrich With Age Breakouts",
@@ -57,7 +48,10 @@ class GetCOVID19TestingData_mostRecent(object):
         in_add_state_grade_layer.value = False        
 
 
-        parameters = [out_featureclass, in_calculate_testing_rate, in_enrich_with_age_breakouts, in_add_state_grade_layer]
+        parameters = [out_featureclass, 
+                      # in_calculate_testing_rate, 
+                      in_enrich_with_age_breakouts, 
+                      in_add_state_grade_layer]
 
         return parameters
 
@@ -74,9 +68,8 @@ class GetCOVID19TestingData_mostRecent(object):
         
         # Instantiate parameters
         out_featureclass = parameters[0].valueAsText
-        in_calculate_testing_rate = parameters[1].value
-        in_enrich_with_age_breakouts = parameters[2].value
-        in_add_state_grade_layer = parameters[3].value
+        in_enrich_with_age_breakouts = parameters[1].value
+        in_add_state_grade_layer = parameters[2].value
 
         ### Retrieve testing data ###
         arcpy.AddMessage("Retrieving most recent data from covidtracking.com API...")
@@ -87,10 +80,8 @@ class GetCOVID19TestingData_mostRecent(object):
 
         ### Append geometry ###
         gis = arcgis.gis.GIS()
-        # Search for USA_Counties
-        search = gis.content.search("USA States", item_type="feature_service", outside_org=True, sort_field="numViews")
-        # Use the correct index to reference the search result
-        states_item = search[0]
+        # Retrieve geometry
+        states_item = gis.content.get("99fd67933e754a1181cc755146be21ca")
         # Read the layer into a dataframe
         states_df = states_item.layers[0].query().sdf
         if in_enrich_with_age_breakouts:
@@ -108,7 +99,7 @@ class GetCOVID19TestingData_mostRecent(object):
                                    'AGE_35_44', 
                                    'AGE_45_54', 
                                    'AGE_55_64', 
-                                   'AGE_65_75', 
+                                   'AGE_65_74', 
                                    'AGE_75_84',
                                    'AGE_85_UP',
                                    'SHAPE']]
@@ -124,9 +115,8 @@ class GetCOVID19TestingData_mostRecent(object):
         # Join the geometry data to our testing data table
         geo_df = pd.merge(states_df, tests_df, left_on='STATE_ABBR', right_on='state', how='left')
 
-        # Calculate testing rate
-        if in_calculate_testing_rate:
-            geo_df['tests_per_1M_residents'] = geo_df['total'] / (geo_df['POPULATION'] / 1000000)
+        # # Calculate testing rate
+        geo_df['tests_per_1M_residents'] = geo_df['total'] / (geo_df['POPULATION'] / 1000000)
 
         # Add the feature class to current project and symbolize
         pro_project = arcpy.mp.ArcGISProject("CURRENT")

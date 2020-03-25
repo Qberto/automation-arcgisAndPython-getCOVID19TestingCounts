@@ -3,18 +3,19 @@
   "version" : "2.6.0",
   "build" : 23665,
   "layers" : [
-    "CIMPATH=map/covid19_testing_20200325.xml"
+    "CIMPATH=map/covid_19_testing__mar_24__2020.xml"
   ],
   "layerDefinitions" : [
     {
       "type" : "CIMFeatureLayer",
-      "name" : "COVID-19 Testing: Mar 25, 2020",
-      "uRI" : "CIMPATH=map/covid19_testing_20200325.xml",
+      "name" : "COVID-19 Testing: Mar 24, 2020",
+      "uRI" : "CIMPATH=map/covid_19_testing__mar_24__2020.xml",
       "sourceModifiedTime" : {
         "type" : "TimeInstant"
       },
+      "metadataURI" : "CIMPATH=Metadata/e0bbd97ccec8e7852e1e44109c6b494d.xml",
       "useSourceMetadata" : true,
-      "description" : "covid19_testing_20200325",
+      "description" : "covid19_testing_20200324",
       "layerElevation" : {
         "type" : "CIMLayerElevationSurface",
         "mapElevationID" : "{B73A2D2A-14B7-471F-868E-738C7059F169}"
@@ -52,7 +53,7 @@
           "type" : "CIMStandardDataConnection",
           "workspaceConnectionString" : "DATABASE=.\\Default.gdb",
           "workspaceFactory" : "FileGDB",
-          "dataset" : "covid19_testing_20200325",
+          "dataset" : "covid19_testing_20200324",
           "datasetType" : "esriDTFeatureClass"
         },
         "studyAreaSpatialRel" : "esriSpatialRelUndefined",
@@ -474,7 +475,38 @@
         "showInAscendingOrder" : true
       },
       "scaleSymbols" : true,
-      "snappable" : true
+      "snappable" : true,
+      "symbolLayerDrawing" : {
+        "type" : "CIMSymbolLayerDrawing"
+      }
+    }
+  ],
+  "binaryReferences" : [
+    {
+      "type" : "CIMBinaryReference",
+      "uRI" : "CIMPATH=Metadata/e0bbd97ccec8e7852e1e44109c6b494d.xml",
+      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20200324</CreaDate><CreaTime>21055400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>covid19_testing_20200324</resTitle></idCitation><idAbs>covid19_testing_20200324</idAbs><idCredit></idCredit><idPurp></idPurp><resConst><Consts><useLimit></useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
+    }
+  ],
+  "elevationSurfaces" : [
+    {
+      "type" : "CIMMapElevationSurface",
+      "elevationMode" : "BaseGlobeSurface",
+      "name" : "Ground",
+      "verticalExaggeration" : 1,
+      "mapElevationID" : "{B73A2D2A-14B7-471F-868E-738C7059F169}",
+      "color" : {
+        "type" : "CIMRGBColor",
+        "values" : [
+          255,
+          255,
+          255,
+          100
+        ]
+      },
+      "surfaceTINShadingMode" : "Smooth",
+      "visibility" : true,
+      "expanded" : true
     }
   ],
   "rGBColorProfile" : "sRGB IEC61966-2-1 noBPC",

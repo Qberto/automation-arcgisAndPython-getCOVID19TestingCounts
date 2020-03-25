@@ -3,6 +3,14 @@
 ## Description
 This ArcGIS Pro project package contains a geoprocessing tool and accompanying notebook to allow GIS users to retrieve daily data for COVID-19 tests per state in the United States using data from the COVID Tracking Project.
 
+## About the Use of COVID-19 Testing Data
+[Debby Bogaert](https://www.ed.ac.uk/inflammation-research/people/principal-investigators/professor-debby-bogaert), professor of paediatric infectious diseases at the Centre for Inflammation Research in the University of Edinburgh, recently commented on the need for testing data for context when examining positive COVID-19 case data. In a particular example, she explains:
+
+>"I see a lot of questions asking why Germany has a relative low % of Covid deaths. To illustrate, I used the Iceberg analogy showing the effects of testing on detection rate and thereby reported death 
+>rate. The more of the iceberg visible, the lower the reported death rate."
+
+![](https://github.com/Qberto/automation-arcgisAndPython-getCOVID19TestingCounts/blob/master/media/iceberg.jpeg?raw=true)
+
 ## Data Context:
 The [COVID Tracking Project](https://covidtracking.com/) collects information from 50 US states, the District of Columbia, and 5 other US territories to provide comprehensive testing data for the novel coronavirus, SARS-CoV-2. The dataset attempts to include positive and negative results, pending tests, and total people tested for each state or district currently reporting that data.
 
