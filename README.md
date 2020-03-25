@@ -1,4 +1,4 @@
-# automation-arcgisAndPython-getCOVID19TestingCounts
+# Daily COVID-19 USA Testing Data for ArcGIS Pro
  
 ## Description
 This ArcGIS Pro project package contains a geoprocessing tool and accompanying notebook to allow GIS users to retrieve daily data for COVID-19 tests per state in the United States using data from the COVID Tracking Project.
@@ -25,6 +25,6 @@ Open the Catalog Pane, then expand the Toolboxes entry. The download tool is ava
 ## Supplemental Jupyter Notebook 
 ![](https://github.com/Qberto/automation-arcgisAndPython-getCOVID19TestingCounts/blob/master/media/ProProject04.JPG?raw=true)
 
-The ArcGIS Pro project also includes a Jupyter Notebook containing the code used by the geoprocessing tool. You may open and directly execute the cells in this notebook, or use it to test changes and further customization of this download process. To open the notebook (ArcGIS Pro 2.5 required), use the Catalog Pane, then expand the current folder connection, and double-click the COVID19_TestingData_Processing.ipynb file:
+The ArcGIS Pro project also includes a Jupyter Notebook containing the code used by the geoprocessing tool. You may open and directly execute the cells in this notebook, or use it to test changes and further customization of this download process. To open the notebook (ArcGIS Pro 2.5 required), use the Catalog Pane, then expand the current folder connection, and double-click the **COVID19_TestingData_Processing.ipynb** file:
 
 ![](https://github.com/Qberto/automation-arcgisAndPython-getCOVID19TestingCounts/blob/master/media/ProProject05.JPG?raw=true)
