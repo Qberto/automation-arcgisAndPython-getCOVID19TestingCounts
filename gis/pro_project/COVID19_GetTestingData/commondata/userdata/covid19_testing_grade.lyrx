@@ -3,17 +3,17 @@
   "version" : "2.6.0",
   "build" : 23665,
   "layers" : [
-    "CIMPATH=covid19_testing_20200324.xml"
+    "CIMPATH=map/covid_19_testing_data_grade__mar_24__2020.xml"
   ],
   "layerDefinitions" : [
     {
       "type" : "CIMFeatureLayer",
       "name" : "COVID-19 Testing Data Grade: Mar 24, 2020",
-      "uRI" : "CIMPATH=covid19_testing_20200324.xml",
+      "uRI" : "CIMPATH=map/covid_19_testing_data_grade__mar_24__2020.xml",
       "sourceModifiedTime" : {
         "type" : "TimeInstant"
       },
-      "metadataURI" : "CIMPATH=Metadata/e0bbd97ccec8e7852e1e44109c6b494d.xml",
+      "metadataURI" : "CIMPATH=Metadata/4493a6ee59d9876c3cfe04d06e410441.xml",
       "useSourceMetadata" : true,
       "description" : "covid19_testing_20200324",
       "layerElevation" : {
@@ -23,11 +23,323 @@
       "expanded" : true,
       "layerType" : "Operational",
       "showLegends" : true,
-      "visibility" : true,
+      "visibility" : false,
       "displayCacheType" : "Permanent",
       "maxDisplayCacheAge" : 5,
       "showPopups" : true,
       "serviceLayerID" : -1,
+      "charts" : [
+        {
+          "type" : "CIMChart",
+          "name" : "Bar Chart 1",
+          "series" : [
+            {
+              "type" : "CIMChartBarSeries",
+              "name" : "Count(grade)",
+              "uniqueName" : "Series0",
+              "fields" : [
+                "grade",
+                ""
+              ],
+              "orderFields" : [
+                "grade"
+              ],
+              "groupFields" : [
+                "grade"
+              ],
+              "verticalAxis" : 1,
+              "colorType" : "SingleColor",
+              "fieldAggregation" : [
+                "",
+                "COUNT"
+              ],
+              "orderFieldsSortTypes" : [
+                0
+              ],
+              "visible" : true,
+              "dataLabelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Calibri",
+                "fontSize" : 9,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "multipleBarType" : "SideBySide",
+              "barSize" : 90,
+              "fillSymbolProperties" : {
+                "type" : "CIMChartFillSymbolProperties",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    166,
+                    206,
+                    227,
+                    100
+                  ]
+                }
+              },
+              "verticalOrientation" : true
+            }
+          ],
+          "generalProperties" : {
+            "type" : "CIMChartGeneralProperties",
+            "title" : "Total states by grade",
+            "showTitle" : true,
+            "useAutomaticTitle" : false,
+            "showSubTitle" : true,
+            "showFooter" : true,
+            "titleText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Calibri",
+              "fontSize" : 16,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "subTitleText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Calibri",
+              "fontSize" : 12,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "footerText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Calibri",
+              "fontSize" : 12,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "backgroundSymbolProperties" : {
+              "type" : "CIMChartFillSymbolProperties",
+              "color" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  255,
+                  255,
+                  255,
+                  100
+                ]
+              }
+            },
+            "gridLineSymbolProperties" : {
+              "type" : "CIMChartLineSymbolProperties",
+              "visible" : true,
+              "width" : 1,
+              "style" : "Solid",
+              "color" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  119,
+                  119,
+                  119,
+                  100
+                ]
+              }
+            }
+          },
+          "legend" : {
+            "type" : "CIMChartLegend",
+            "visible" : true,
+            "showTitle" : true,
+            "alignment" : "Right",
+            "legendText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Calibri",
+              "fontSize" : 10.800000000000001,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "legendTitle" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Calibri",
+              "fontSize" : 10.800000000000001,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            }
+          },
+          "axes" : [
+            {
+              "type" : "CIMChartAxis",
+              "visible" : true,
+              "title" : "Data Grade",
+              "showTitle" : true,
+              "useAutomaticTitle" : false,
+              "calculateAutomaticMinimum" : true,
+              "calculateAutomaticMaximum" : true,
+              "minimum" : null,
+              "maximum" : null,
+              "titleText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Calibri",
+                "fontItalic" : true,
+                "fontSize" : 12,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "labelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Calibri",
+                "fontSize" : 10.800000000000001,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "axisLineSymbolProperties" : {
+                "type" : "CIMChartLineSymbolProperties",
+                "visible" : true,
+                "width" : 1,
+                "style" : "Solid",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    170,
+                    170,
+                    170,
+                    100
+                  ]
+                }
+              },
+              "labelCharacterLimit" : 11,
+              "navigationScaleFactor" : 1
+            },
+            {
+              "type" : "CIMChartAxis",
+              "visible" : true,
+              "title" : "# of States",
+              "showTitle" : true,
+              "useAutomaticTitle" : false,
+              "valueFormat" : "N2",
+              "dateTimeFormat" : "M/d/yyyy",
+              "calculateAutomaticMinimum" : true,
+              "calculateAutomaticMaximum" : true,
+              "minimum" : null,
+              "maximum" : null,
+              "titleText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Calibri",
+                "fontItalic" : true,
+                "fontSize" : 12,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "labelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Calibri",
+                "fontSize" : 10.800000000000001,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "axisLineSymbolProperties" : {
+                "type" : "CIMChartLineSymbolProperties",
+                "visible" : true,
+                "width" : 1,
+                "style" : "Solid",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    170,
+                    170,
+                    170,
+                    0
+                  ]
+                }
+              },
+              "labelCharacterLimit" : 11,
+              "navigationScaleFactor" : 1
+            }
+          ],
+          "mapSelectionHandling" : "Highlight"
+        }
+      ],
       "refreshRate" : -1,
       "refreshRateUnit" : "esriTimeUnitsSeconds",
       "autoGenerateFeatureTemplates" : true,
@@ -520,7 +832,7 @@
           "zeroPad" : true
         },
         "showInAscendingOrder" : false,
-        "heading" : "Grade",
+        "heading" : "score",
         "sampleSize" : 10000,
         "defaultSymbolPatch" : "Default",
         "defaultSymbol" : {
@@ -609,17 +921,14 @@
         "exclusionSymbolPatch" : "Default"
       },
       "scaleSymbols" : true,
-      "snappable" : true,
-      "symbolLayerDrawing" : {
-        "type" : "CIMSymbolLayerDrawing"
-      }
+      "snappable" : true
     }
   ],
   "binaryReferences" : [
     {
       "type" : "CIMBinaryReference",
-      "uRI" : "CIMPATH=Metadata/e0bbd97ccec8e7852e1e44109c6b494d.xml",
-      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20200324</CreaDate><CreaTime>21055400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>covid19_testing_20200324</resTitle></idCitation><idAbs>covid19_testing_20200324</idAbs><idCredit></idCredit><idPurp></idPurp><resConst><Consts><useLimit></useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
+      "uRI" : "CIMPATH=Metadata/4493a6ee59d9876c3cfe04d06e410441.xml",
+      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20200324</CreaDate><CreaTime>22014200</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>COVID-19 Testing Data Grade: Mar 24, 2020</resTitle></idCitation><idAbs>covid19_testing_20200324</idAbs><idCredit></idCredit><idPurp></idPurp><resConst><Consts><useLimit></useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
     }
   ],
   "elevationSurfaces" : [

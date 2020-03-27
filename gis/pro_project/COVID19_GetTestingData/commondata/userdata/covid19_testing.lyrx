@@ -3,17 +3,17 @@
   "version" : "2.6.0",
   "build" : 23665,
   "layers" : [
-    "CIMPATH=map/covid_19_testing__mar_24__2020.xml"
+    "CIMPATH=covid19_testing_202003242.xml"
   ],
   "layerDefinitions" : [
     {
       "type" : "CIMFeatureLayer",
       "name" : "COVID-19 Testing: Mar 24, 2020",
-      "uRI" : "CIMPATH=map/covid_19_testing__mar_24__2020.xml",
+      "uRI" : "CIMPATH=covid19_testing_202003242.xml",
       "sourceModifiedTime" : {
         "type" : "TimeInstant"
       },
-      "metadataURI" : "CIMPATH=Metadata/e0bbd97ccec8e7852e1e44109c6b494d.xml",
+      "metadataURI" : "CIMPATH=Metadata/3a44e3238fcd600bb235e623f4bfcc08.xml",
       "useSourceMetadata" : true,
       "description" : "covid19_testing_20200324",
       "layerElevation" : {
@@ -41,6 +41,612 @@
       },
       "showPopups" : true,
       "serviceLayerID" : -1,
+      "charts" : [
+        {
+          "type" : "CIMChart",
+          "name" : "Bar Chart 1",
+          "series" : [
+            {
+              "type" : "CIMChartBarSeries",
+              "name" : "tests_per_1M_residents",
+              "uniqueName" : "Series0",
+              "fields" : [
+                "state",
+                "tests_per_1M_residents"
+              ],
+              "orderFields" : [
+                "tests_per_1M_residents"
+              ],
+              "verticalAxis" : 1,
+              "colorType" : "ColorMatch",
+              "orderFieldsSortTypes" : [
+                1
+              ],
+              "visible" : true,
+              "dataLabelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Calibri",
+                "fontSize" : 9,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "multipleBarType" : "Stacked",
+              "barSize" : 90,
+              "fillSymbolProperties" : {
+                "type" : "CIMChartFillSymbolProperties",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    166,
+                    206,
+                    227,
+                    100
+                  ]
+                }
+              },
+              "verticalOrientation" : true
+            }
+          ],
+          "generalProperties" : {
+            "type" : "CIMChartGeneralProperties",
+            "title" : "Total Tests per Million People",
+            "showTitle" : true,
+            "useAutomaticTitle" : false,
+            "showSubTitle" : true,
+            "showFooter" : true,
+            "titleText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Segoe UI",
+              "fontSize" : 16,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "subTitleText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Calibri",
+              "fontSize" : 12,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "footerText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Segoe UI",
+              "fontSize" : 10,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "backgroundSymbolProperties" : {
+              "type" : "CIMChartFillSymbolProperties",
+              "color" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  255,
+                  255,
+                  255,
+                  100
+                ]
+              },
+              "opacity" : 1
+            },
+            "gridLineSymbolProperties" : {
+              "type" : "CIMChartLineSymbolProperties",
+              "visible" : true,
+              "width" : 1,
+              "style" : "Solid",
+              "color" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  225,
+                  225,
+                  225,
+                  100
+                ]
+              }
+            }
+          },
+          "legend" : {
+            "type" : "CIMChartLegend",
+            "visible" : true,
+            "showTitle" : true,
+            "alignment" : "Right",
+            "legendText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Segoe UI",
+              "fontSize" : 10,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "legendTitle" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Segoe UI",
+              "fontSize" : 10.800000000000001,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            }
+          },
+          "axes" : [
+            {
+              "type" : "CIMChartAxis",
+              "visible" : true,
+              "title" : "State",
+              "showTitle" : true,
+              "useAutomaticTitle" : false,
+              "calculateAutomaticMinimum" : true,
+              "calculateAutomaticMaximum" : true,
+              "minimum" : null,
+              "maximum" : null,
+              "titleText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 12,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "labelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 10,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "axisLineSymbolProperties" : {
+                "type" : "CIMChartLineSymbolProperties",
+                "visible" : true,
+                "width" : 1,
+                "style" : "Solid",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    156,
+                    156,
+                    156,
+                    100
+                  ]
+                }
+              },
+              "labelCharacterLimit" : 11,
+              "navigationScaleFactor" : 1
+            },
+            {
+              "type" : "CIMChartAxis",
+              "visible" : true,
+              "title" : "Total tests per million people",
+              "showTitle" : true,
+              "useAutomaticTitle" : false,
+              "valueFormat" : "N2",
+              "dateTimeFormat" : "M/d/yyyy",
+              "calculateAutomaticMinimum" : true,
+              "calculateAutomaticMaximum" : true,
+              "minimum" : null,
+              "maximum" : null,
+              "titleText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 12,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "labelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 10,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "axisLineSymbolProperties" : {
+                "type" : "CIMChartLineSymbolProperties",
+                "visible" : true,
+                "width" : 1,
+                "style" : "Solid",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    156,
+                    156,
+                    156,
+                    100
+                  ]
+                }
+              },
+              "labelCharacterLimit" : 11,
+              "navigationScaleFactor" : 1
+            }
+          ],
+          "mapSelectionHandling" : "Highlight"
+        },
+        {
+          "type" : "CIMChart",
+          "name" : "Bar Chart 2",
+          "series" : [
+            {
+              "type" : "CIMChartBarSeries",
+              "name" : "total",
+              "uniqueName" : "Series0",
+              "fields" : [
+                "state",
+                "total"
+              ],
+              "orderFields" : [
+                "total"
+              ],
+              "verticalAxis" : 1,
+              "colorType" : "ColorMatch",
+              "orderFieldsSortTypes" : [
+                1
+              ],
+              "visible" : true,
+              "dataLabelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 9,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "multipleBarType" : "SideBySide",
+              "barSize" : 90,
+              "fillSymbolProperties" : {
+                "type" : "CIMChartFillSymbolProperties",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    166,
+                    206,
+                    227,
+                    100
+                  ]
+                }
+              },
+              "verticalOrientation" : true
+            }
+          ],
+          "generalProperties" : {
+            "type" : "CIMChartGeneralProperties",
+            "title" : "Total Tests by State",
+            "showTitle" : true,
+            "useAutomaticTitle" : false,
+            "showSubTitle" : true,
+            "showFooter" : true,
+            "titleText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Segoe UI",
+              "fontSize" : 16,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "subTitleText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Calibri",
+              "fontSize" : 12,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "footerText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Segoe UI",
+              "fontSize" : 10,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "backgroundSymbolProperties" : {
+              "type" : "CIMChartFillSymbolProperties",
+              "color" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  255,
+                  255,
+                  255,
+                  100
+                ]
+              },
+              "opacity" : 1
+            },
+            "gridLineSymbolProperties" : {
+              "type" : "CIMChartLineSymbolProperties",
+              "visible" : true,
+              "width" : 1,
+              "style" : "Solid",
+              "color" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  225,
+                  225,
+                  225,
+                  100
+                ]
+              }
+            }
+          },
+          "legend" : {
+            "type" : "CIMChartLegend",
+            "visible" : true,
+            "showTitle" : true,
+            "alignment" : "Right",
+            "legendText" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Segoe UI",
+              "fontSize" : 10,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            },
+            "legendTitle" : {
+              "type" : "CIMChartTextProperties",
+              "fontFillColor" : {
+                "type" : "CIMRGBColor",
+                "values" : [
+                  68,
+                  68,
+                  68,
+                  100
+                ]
+              },
+              "fontFamilyName" : "Segoe UI",
+              "fontSize" : 10.800000000000001,
+              "fontWeight" : "Normal",
+              "textCase" : "Normal"
+            }
+          },
+          "axes" : [
+            {
+              "type" : "CIMChartAxis",
+              "visible" : true,
+              "title" : "State",
+              "showTitle" : true,
+              "useAutomaticTitle" : false,
+              "calculateAutomaticMinimum" : true,
+              "calculateAutomaticMaximum" : true,
+              "minimum" : null,
+              "maximum" : null,
+              "titleText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 12,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "labelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 10,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "axisLineSymbolProperties" : {
+                "type" : "CIMChartLineSymbolProperties",
+                "visible" : true,
+                "width" : 1,
+                "style" : "Solid",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    156,
+                    156,
+                    156,
+                    100
+                  ]
+                }
+              },
+              "labelCharacterLimit" : 11,
+              "navigationScaleFactor" : 1
+            },
+            {
+              "type" : "CIMChartAxis",
+              "visible" : true,
+              "title" : "Total Tests",
+              "showTitle" : true,
+              "useAutomaticTitle" : false,
+              "valueFormat" : "N2",
+              "dateTimeFormat" : "M/d/yyyy",
+              "calculateAutomaticMinimum" : true,
+              "calculateAutomaticMaximum" : true,
+              "minimum" : null,
+              "maximum" : null,
+              "titleText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 12,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "labelText" : {
+                "type" : "CIMChartTextProperties",
+                "fontFillColor" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    68,
+                    68,
+                    68,
+                    100
+                  ]
+                },
+                "fontFamilyName" : "Segoe UI",
+                "fontSize" : 10,
+                "fontWeight" : "Normal",
+                "textCase" : "Normal"
+              },
+              "axisLineSymbolProperties" : {
+                "type" : "CIMChartLineSymbolProperties",
+                "visible" : true,
+                "width" : 1,
+                "style" : "Solid",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    156,
+                    156,
+                    156,
+                    100
+                  ]
+                }
+              },
+              "labelCharacterLimit" : 11,
+              "navigationScaleFactor" : 1
+            }
+          ],
+          "mapSelectionHandling" : "Highlight"
+        }
+      ],
       "refreshRate" : -1,
       "refreshRateUnit" : "esriTimeUnitsSeconds",
       "autoGenerateFeatureTemplates" : true,
@@ -475,17 +1081,14 @@
         "showInAscendingOrder" : true
       },
       "scaleSymbols" : true,
-      "snappable" : true,
-      "symbolLayerDrawing" : {
-        "type" : "CIMSymbolLayerDrawing"
-      }
+      "snappable" : true
     }
   ],
   "binaryReferences" : [
     {
       "type" : "CIMBinaryReference",
-      "uRI" : "CIMPATH=Metadata/e0bbd97ccec8e7852e1e44109c6b494d.xml",
-      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20200324</CreaDate><CreaTime>21055400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>covid19_testing_20200324</resTitle></idCitation><idAbs>covid19_testing_20200324</idAbs><idCredit></idCredit><idPurp></idPurp><resConst><Consts><useLimit></useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
+      "uRI" : "CIMPATH=Metadata/3a44e3238fcd600bb235e623f4bfcc08.xml",
+      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20200324</CreaDate><CreaTime>22014300</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>COVID-19 Testing: Mar 24, 2020</resTitle></idCitation><idAbs>covid19_testing_20200324</idAbs><idCredit></idCredit><idPurp></idPurp><resConst><Consts><useLimit></useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
     }
   ],
   "elevationSurfaces" : [

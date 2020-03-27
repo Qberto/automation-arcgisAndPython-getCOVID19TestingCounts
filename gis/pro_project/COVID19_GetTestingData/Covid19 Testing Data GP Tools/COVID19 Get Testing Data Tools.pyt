@@ -16,7 +16,7 @@ class Toolbox(object):
 class GetCOVID19TestingData_mostRecent(object):
 
     def __init__(self):
-        self.label = "Get Today's State Testing Data"
+        self.label = "Get USA State Testing Data: Current Day"
         self.description = "Uses data from the COVID-19 tracking project to generate a feature class of the most recent daily testing per state in the United States."
         self.canRunInBackground = True
 
@@ -31,27 +31,27 @@ class GetCOVID19TestingData_mostRecent(object):
             direction="Output")
         out_featureclass.value = os.path.join(arcpy.mp.ArcGISProject("CURRENT").defaultGeodatabase, "covid19_testing_"+date.today().strftime("%Y%m%d"))
 
-        in_enrich_with_age_breakouts = arcpy.Parameter(
-            displayName="Enrich With Age Breakouts",
-            name="in_enrich_age",
-            datatype="GPBoolean",
-            parameterType="Required",
-            direction="Input")
-        in_enrich_with_age_breakouts.value = False  
-
         in_add_state_grade_layer = arcpy.Parameter(
-            displayName="Include Test Data Grade Layer",
+            displayName="Output Layers: Include State Data Grade Layer",
             name="in_add_state_grade_layer",
             datatype="GPBoolean",
             parameterType="Required",
             direction="Input")
-        in_add_state_grade_layer.value = False        
+        in_add_state_grade_layer.value = False
+        in_add_state_grade_layer.category = "Additional Parameters"
 
+        in_enrich_with_age_breakouts = arcpy.Parameter(
+            displayName="Output Fields: Include Age Variables",
+            name="in_enrich_age",
+            datatype="GPBoolean",
+            parameterType="Required",
+            direction="Input")
+        in_enrich_with_age_breakouts.value = False
+        in_enrich_with_age_breakouts.category = "Additional Parameters"
 
         parameters = [out_featureclass, 
-                      # in_calculate_testing_rate, 
-                      in_enrich_with_age_breakouts, 
-                      in_add_state_grade_layer]
+                      in_add_state_grade_layer,
+                      in_enrich_with_age_breakouts]
 
         return parameters
 
@@ -68,9 +68,9 @@ class GetCOVID19TestingData_mostRecent(object):
         
         # Instantiate parameters
         out_featureclass = parameters[0].valueAsText
-        in_enrich_with_age_breakouts = parameters[1].value
-        in_add_state_grade_layer = parameters[2].value
-
+        in_add_state_grade_layer = parameters[1].value
+        in_enrich_with_age_breakouts = parameters[2].value
+        
         ### Retrieve testing data ###
         arcpy.AddMessage("Retrieving most recent data from covidtracking.com API...")
         api_url = r"https://covidtracking.com/api/states"
